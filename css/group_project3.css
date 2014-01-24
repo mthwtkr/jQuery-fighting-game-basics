@@ -1,0 +1,63 @@
+ h1{
+	color: #F6A600;
+	text-align: center;
+}
+select{
+	margin-bottom: 10px;
+}
+
+a{
+	width: 75px;
+	margin-left: 100px;
+	border-radius: 1px;
+	text-decoration: none;
+	background-color: royalblue;
+	color: white;
+}
+
+#container #choose_background button{
+	border-radius: 5px;
+}
+
+#container{
+	width: 950px;
+	height: 450px;
+	margin: 0px;
+	background-color: black;
+	background-size: 950px 550px;
+}
+
+#choose_background, #choose_player{
+	width: 250px;
+	height: 150px;
+	display: inline-block;
+	border-radius: 10px;
+	margin-top: 100px;
+	margin-left: 350px;
+	background-color: rgba(128,128,128,.6);
+}
+
+
+#beach, #forest{
+	margin-left: 45px;
+}
+
+#player1{
+	margin-left: 22px;
+}
+
+#show_player1, #show_player2{
+	width: 100px;
+	height: 150px;
+	display: inline-block;
+	background-size: 100px 150px;
+	/*border: 1px solid aqua;*/
+}
+
+#show_player2 {
+	margin-left: 244px;
+}
+
+#box {
+	margin-left: 250px;
+}

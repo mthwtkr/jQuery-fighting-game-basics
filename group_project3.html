@@ -1,0 +1,100 @@
+<!doctype HTML>
+<head>
+	<meta charset="UTF-8" />
+	<meta name="description" content="Group Project 3" />
+	<title>Group Project 3</title>
+	<link rel="stylesheet" type="text/css" href="css/group_project3.css"/>
+	<script type="text/javascript" src="../jquery.js"></script>
+	<script src="http://code.jquery.com/ui/1.10.3/jquery-ui.js"></script>
+	<script>
+	$(document).ready(function(){
+		// Hide player selection and <h1> from beginning
+		$('#choose_player, #select_players').hide();
+
+		// Choosing which background to set to container
+		$('button').click(function(){
+				var image = 'url(./images/' + $(this).attr('id') + '.jpg)';
+				// $(this).parent().parent().css('background-image', image);
+				$('#container').css('background-image', image);
+
+				$('#choose_background, #arena').hide();
+				$('#choose_player, #select_players').show();
+
+			});
+
+		// Change background-image on button hover
+		$('button').hover(function(){
+				var image = 'url(./images/' + $(this).attr('id') + '.jpg)';
+				console.log(image);
+				// $(this).parent().parent().css('background-image', image);
+				$('#container').css('background-image', image);
+				console.log(image);
+			});
+
+		// $('#player2').click(function(){
+		// 	var color = 'url(./images/' + $('option:selected', this).attr('value') + '.png)';
+		// 		console.log(color);
+		// 		$('#show_player2').css('background-image', color)
+		// })
+
+		// Setting up players to display
+		$('#player1, #player2').change(function(){
+				var color = 'url(./images/' + $('option:selected', this).attr('value') + '.png)';
+				console.log(color);
+				var player_box = '#' + 'show_' + $(this).attr('id');
+				$(player_box).css('background-image', color);
+			});
+
+		// Reset Everything. Hide player selection and <h1>
+		$('#reset').click(function(){
+			$('#show_player1, #show_player2').css('background-image', '');
+			$('#choose_player, #select_players').hide();
+			$('#choose_background, #arena').show();
+		});
+	});
+	</script>
+</head>
+<body>
+	<div id="container">
+
+		<div id="choose_background">
+			<h1 id="select_arenas">Select Arena</h1>
+			<button id="beach" type="button">beach</button>
+			<button id="calvin" type="button">calvin</button>
+			<button id="dojo" type="button">dojo</button>
+			<button id="forest" type="button">forest</button>
+			<button id="matrix" type="button">matrix</button>
+			<button id="snow" type="button">snow</button>
+		</div>
+		<div id="choose_player">
+			<h1 id="select_players">Select Players</h1>
+
+			<select id="player1">
+				<option value ="yellow">Yellow Ninja</option>
+				<option value ="white">White Ninja</option>
+				<option value ="black">Black Ninja</option>
+				<option value ="green">Green Ninja</option>
+				<option value ="red">Red Ninja</option>
+				<option value ="leo">Leo Ninja</option>
+			</select> 
+
+			<select id="player2">
+				<option value ="yellow">Yellow Ninja</option>
+				<option value ="white">White Ninja</option>
+				<option value ="black">Black Ninja</option>
+				<option value ="green">Green Ninja</option>
+				<option value ="red">Red Ninja</option>
+				<option value ="leo">Leo Ninja</option>
+			</select> 
+
+			<a id="reset" href="#">RESET</button>
+		</div> <!-- End of choose_player -->
+
+		<div id="box">
+			<div id="show_player1">
+			</div>
+			<div id="show_player2">
+			</div>
+		</div>
+	</div> <!-- End of container -->
+</body>
